@@ -44,11 +44,10 @@ public class Flow : MonoBehaviour
     }
 
     void Update(){
-
         if (!(startMainScreen.activeSelf) && !(startIntroScreen.activeSelf) && Input.GetKeyDown(KeyCode.Escape))
             if (pauseScreen.activeSelf)
                 pauseScreen.SetActive(false);
             else
                 pauseScreen.SetActive(true);
-    }
+    }
 }

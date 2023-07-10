@@ -10,12 +10,4 @@ public class Logic : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
-            pause.SetActive(true);
-
-    }
 }
