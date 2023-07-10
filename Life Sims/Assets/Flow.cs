@@ -6,6 +6,7 @@ public class Flow : MonoBehaviour
 {
     public GameObject startMainScreen;
     public GameObject startIntroScreen;
+    public GameObject goToScreen;
 
 
     // Start is called before the first frame update
@@ -13,6 +14,7 @@ public class Flow : MonoBehaviour
     {
         startMainScreen.SetActive(true);
         startIntroScreen.SetActive(false);
+        goToScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,5 +23,11 @@ public class Flow : MonoBehaviour
     {
         startMainScreen.SetActive(false);
         startIntroScreen.SetActive(true);
+    }
+
+    public void start_Continue()
+    {
+        startIntroScreen.SetActive(false);
+        goToScreen.SetActive(true);
     }
 }
