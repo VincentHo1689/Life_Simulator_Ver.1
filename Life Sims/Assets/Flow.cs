@@ -8,7 +8,7 @@ public class Flow : MonoBehaviour
     public GameObject startIntroScreen;
     public GameObject goToScreen;
     public GameObject pauseScreen;
-    public GameObject startCombined;
+    public GameObject Home;
 
 
     // Start is called before the first frame update
@@ -25,22 +25,28 @@ public class Flow : MonoBehaviour
     {
         startMainScreen.SetActive(false);
         startIntroScreen.SetActive(true);
-        startCombined.SetActive(true);
     }
 
     public void start_Continue()
     {
         startIntroScreen.SetActive(false);
         goToScreen.SetActive(true);
-        startCombined.SetActive(false);
     }
 
-    void update(){
-        if (Input.GetKeyDown(KeyCode.Escape) && startCombined.activeSelf == false)
-        {
-            Debug.Log("yes");
-            Debug.Log(startMainScreen.activeSelf.ToString());
-            pauseScreen.SetActive(!pauseScreen.activeInHierarchy);
-        }
+    public void LeaveHome()
+    {
+        Home.SetActive(false);
+    }
+
+    public void GoHome()
+    {
+        Home.SetActive(true);
+    }
+
+    void Update(){
+        Debug.Log((!(startMainScreen.activeSelf) && !(startIntroScreen.activeSelf)).ToString());
+        if (!(startMainScreen.activeSelf) && !(startIntroScreen.activeSelf))
+            if (Input.GetKeyDown(KeyCode.Escape))
+                pauseScreen.SetActive(true);
     }
 }
