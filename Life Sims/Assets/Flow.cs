@@ -7,6 +7,7 @@ public class Flow : MonoBehaviour
     public GameObject startMainScreen;
     public GameObject startIntroScreen;
     public GameObject goToScreen;
+    public GameObject pauseScreen;
 
 
     // Start is called before the first frame update
@@ -29,5 +30,12 @@ public class Flow : MonoBehaviour
     {
         startIntroScreen.SetActive(false);
         goToScreen.SetActive(true);
+    }
+
+    void update(){
+        if (Input.GetKeyDown(KeyCode.Escape) && startIntroScreen.activeSelf && startMainScreen.activeSelf)
+        {
+            pauseScreen.SetActive(!pauseScreen.activeSelf);
+        }
     }
 }
